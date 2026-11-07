@@ -22,5 +22,21 @@ Untuk menjalankan Jupyter Notebook, gunakan:
 jupyter notebook
 ```
 
+## Deploy ke Render.com
+1. Di Render, buat **New > Web Service**, lalu hubungkan repositori dan pilih branch yang akan di-deploy.
+2. Pilih **Python** sebagai runtime, lalu isi perintah berikut:
+
+   **Build Command**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   **Start Command**
+   ```bash
+   gunicorn --bind 0.0.0.0:$PORT main:app
+   ```
+
+3. Klik **Create Web Service**. Setelah proses deploy selesai, buka URL yang disediakan Render.
+
 ## Migrasi
 Silahkan pindah dari Flask ke FastAPI https://github.com/fastapi/fastapi untuk performa dan pengalaman yang lebih baik.

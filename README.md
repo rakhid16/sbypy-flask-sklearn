@@ -1,6 +1,26 @@
 # Cara menjalankan
-1. Clone/Pull repositorinya
-2. Masuk ke dalam direktori tersebut lewat terminal/CMD
-3. Untuk menjalankan server ketik aja ```python3 main.py``` kata-kata ```python3``` dapan diganti dengan ```python``` atau ```py``` tergantung dari sistem operasi apa kalian menjalankannya
-4. Untuk menjalankan jupyter notebook'nya ketik aja ```jupyter notebook```
-5. Sudah
+1. Clone/pull repositori, lalu masuk ke direktori proyek lewat terminal.
+2. Buat virtual environment:
+```
+python3 -m venv venv
+```
+3. Aktifkan virtual environment dan install dependensi:
+```bash
+source venv/bin/activate
+pip install -r requirements.txt
+```
+Di Windows, aktifkan virtual environment dengan `venv\Scripts\activate`.
+
+4. Jalankan server dengan debug aktif dari terminal:
+```bash
+python3 -m flask --app main run --debug
+```
+Opsi `--debug` mengaktifkan debug mode dan auto-reload. Buka alamat yang ditampilkan Flask di terminal (biasanya `http://127.0.0.1:5000`).
+
+Untuk menjalankan Jupyter Notebook, gunakan:
+```bash
+jupyter notebook
+```
+
+## Migrasi
+Silahkan pindah dari Flask ke FastAPI https://github.com/fastapi/fastapi untuk performa dan pengalaman yang lebih baik.
